@@ -70,13 +70,19 @@ export default {
   },
   methods: {
     addTask() {
+      if (this.newTaskTitle.length === 0){
+        return (alert("Enter at least 1 character!"))
+      }
+      
       let newTask = {
         id: Date.now(),
         title: this.newTaskTitle,
         done: false
       }
+      
       this.tasks.push(newTask)
       this.newTaskTitle = ''
+      
       
     },
     doneTask(id) {
