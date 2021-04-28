@@ -1,6 +1,7 @@
 
 <template>
   <div class="home">
+    <v-alert type="warning" dense v-if="type">test </v-alert>
      <v-text-field
      v-model="newTaskTitle"
      @click:append="addTask"
@@ -44,6 +45,8 @@
         </v-list-item>
         <v-divider> </v-divider>
        </div>
+
+       
         
     </v-list>
   </div>
@@ -59,20 +62,18 @@ export default {
     return {
       newTaskTitle: '',
       tasks: [
-       /*  { id : 1,
-        title: 'Task-1', done: false},
-        { id : 2,
-        title: 'Task-2', done: false},
-        { id : 3,
-        title: 'Task-3', done: false} */
-      ]
+      ],
+      type: null
     }
   },
   methods: {
+    taskAlert(type) {if (this.newTaskTitle.length === 0) {
+      console.log("test")
+    }},
     addTask() {
-      if (this.newTaskTitle.length === 0){
+      /* if (this.newTaskTitle.length === 0){
         return (alert("Enter at least 1 character!"))
-      }
+      } */
       
       let newTask = {
         id: Date.now(),

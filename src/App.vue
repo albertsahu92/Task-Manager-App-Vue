@@ -5,13 +5,19 @@
       app
       temporary
     >
+    <div >
+          <v-avatar rounded-50 size="90" class="ml-7 mt-2">
+              <v-img src="https://randomuser.me/api/portraits/women/85.jpg"></v-img>
+          </v-avatar>
+    </div>
+
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
-            Task Manager
+            Test User
           </v-list-item-title>
           <v-list-item-subtitle>
-            a Task Manager App
+            Task Manager App
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -22,12 +28,14 @@
         dense
         nav
       >
+
         <v-list-item
           v-for="item in items"
           :key="item.title"
           :to ="item.to"
           link
         >
+
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -66,8 +74,11 @@
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
+      
+
     
     </v-app-bar>
+    
     
 
     <v-main>
